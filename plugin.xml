@@ -3,7 +3,7 @@
   <name>cordova-plugin-android-boot</name>
   <description>Cordova plugin for launching an app at boot</description>
   <author email="github@tixz.dk">Emil Bay</author>
-  <keywords>cordova,android,cosu,single-use,pin,lock,kiosk,mode</keywords>
+  <keywords>cordova,android</keywords>
   <license>ISC</license>
   <repo>git+https://github.com/emilbayes/cordova-plugin-android-boot.git</repo>
   <issue>https://github.com/emilbayes/cordova-plugin-android-boot/issues</issue>

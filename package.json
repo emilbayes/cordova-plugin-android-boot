@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-boot",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Cordova plugin for launching an app at boot",
   "main": "index.js",
   "dependencies": {},
