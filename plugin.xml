@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-android-boot" version="1.0.0">
+  <name>cordova-plugin-android-boot</name>
+  <description>Cordova plugin for launching an app at boot</description>
+  <author email="github@tixz.dk">Emil Bay</author>
+  <keywords>cordova,android,cosu,single-use,pin,lock,kiosk,mode</keywords>
+  <license>ISC</license>
+  <repo>git+https://github.com/emilbayes/cordova-plugin-android-boot.git</repo>
+  <issue>https://github.com/emilbayes/cordova-plugin-android-boot/issues</issue>
+  <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <receiver android:name="com.github.emilbayes.boot.BootReceiver">
+        <intent-filter>
+          <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        </intent-filter>
+      </receiver>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:name='MainActivity']/intent-filter">
+      <category android:name="android.intent.category.HOME"/>
+      <category android:name="android.intent.category.DEFAULT"/>
+    </config-file>
+
+    <source-file src="src/com/github/emilbayes/boot/BootReceiver.java" target-dir="src/com/github/emilbayes/boot"/>
+  </platform>
+</plugin>
